@@ -1,14 +1,38 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Ionic Blank
+      Mutaman 
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
-  </div>
+
+
+  <ion-grid>
+    <ion-row>
+      <ion-col  size="10">
+        <ion-item  lines="none" class="item">
+          <ion-avatar slot="start">
+            <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+          </ion-avatar>
+          <p>I've had a pretty messed up day. If we just...</p>
+        </ion-item>
+      </ion-col>
+      <ion-col (click)="presentAlertPrompt()" size="2" class="addon" >
+        <ion-icon class="add" name="add"> </ion-icon>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+  <ion-list >
+      <ion-item lines="none" *ngFor ="let items of isdata" >
+        <ion-label  text-wrap  >Our customer {{items.UserName}} said at 9:37 on 5 may 2019 that he loves<span style="color: blue"> {{items.favCarName}} </span>Model <span style="color:blue">{{items.CarModel}} </span><br>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+
+
+
 </ion-content>
